@@ -74,14 +74,17 @@ const uint8_t single_key[][ 2 ] = {
                 { PS2_KC_CAPS, PS2_KEY_CAPS },
                 { PS2_KC_L_SHIFT, PS2_KEY_L_SHIFT },
                 { PS2_KC_R_SHIFT, PS2_KEY_R_SHIFT },
-                { PS2_KC_CTRL, PS2_KEY_L_CTRL },
-                { PS2_KC_ALT, PS2_KEY_L_ALT },
-                { PS2_KC_SYSRQ, PS2_KEY_SYSRQ },
+                { PS2_KC_L_CTRL, PS2_KEY_L_CTRL },
+                { PS2_KC_R_CTRL, PS2_KEY_R_CTRL },
+                { PS2_KC_L_ALT, PS2_KEY_L_ALT },
+                { PS2_KC_R_ALT, PS2_KEY_R_ALT },
+                { PS2_KC_L_GUI, PS2_KEY_L_GUI },
+                { PS2_KC_R_GUI, PS2_KEY_R_GUI },
                 { PS2_KC_ESC, PS2_KEY_ESC },
                 { PS2_KC_BS, PS2_KEY_BS },
                 { PS2_KC_TAB, PS2_KEY_TAB },
                 { PS2_KC_ENTER, PS2_KEY_ENTER },
-                { PS2_KC_SPACE, PS2_KEY_SPACE },
+                { PS2_KC_SPACE, PS2_KEY_SPACE },                
                 { PS2_KC_KP0, PS2_KEY_KP0 },
                 { PS2_KC_KP1, PS2_KEY_KP1 },
                 { PS2_KC_KP2, PS2_KEY_KP2 },
@@ -96,7 +99,6 @@ const uint8_t single_key[][ 2 ] = {
                 { PS2_KC_KP_PLUS, PS2_KEY_KP_PLUS },
                 { PS2_KC_KP_MINUS, PS2_KEY_KP_MINUS },
                 { PS2_KC_KP_TIMES, PS2_KEY_KP_TIMES },
-                { PS2_KC_KP_EQUAL, PS2_KEY_KP_EQUAL },
                 { PS2_KC_0, PS2_KEY_0 },
                 { PS2_KC_1, PS2_KEY_1 },
                 { PS2_KC_2, PS2_KEY_2 },
@@ -144,7 +146,6 @@ const uint8_t single_key[][ 2 ] = {
                 { PS2_KC_OPEN_SQ, PS2_KEY_OPEN_SQ },
                 { PS2_KC_CLOSE_SQ, PS2_KEY_CLOSE_SQ },
                 { PS2_KC_EQUAL, PS2_KEY_EQUAL },
-                { PS2_KC_EUROPE2, PS2_KEY_EUROPE2 },
                 { PS2_KC_F1, PS2_KEY_F1 },
                 { PS2_KC_F2, PS2_KEY_F2 },
                 { PS2_KC_F3, PS2_KEY_F3 },
@@ -157,43 +158,9 @@ const uint8_t single_key[][ 2 ] = {
                 { PS2_KC_F10, PS2_KEY_F10 },
                 { PS2_KC_F11, PS2_KEY_F11 },
                 { PS2_KC_F12, PS2_KEY_F12 },
-                { PS2_KC_F13, PS2_KEY_F13 },
-                { PS2_KC_F14, PS2_KEY_F14 },
-                { PS2_KC_F15, PS2_KEY_F15 },
-                { PS2_KC_F16, PS2_KEY_F16 },
-                { PS2_KC_F17, PS2_KEY_F17 },
-                { PS2_KC_F18, PS2_KEY_F18 },
-                { PS2_KC_F19, PS2_KEY_F19 },
-                { PS2_KC_F20, PS2_KEY_F20 },
-                { PS2_KC_F21, PS2_KEY_F21 },
-                { PS2_KC_F22, PS2_KEY_F22 },
-                { PS2_KC_F23, PS2_KEY_F23 },
-                { PS2_KC_F24, PS2_KEY_F24 },
-                { PS2_KC_KP_COMMA, PS2_KEY_KP_COMMA },
-                { PS2_KC_INTL1, PS2_KEY_INTL1 },
-                { PS2_KC_INTL2, PS2_KEY_INTL2 },
-                { PS2_KC_INTL3, PS2_KEY_INTL3 },
-                { PS2_KC_INTL4, PS2_KEY_INTL4 },
-                { PS2_KC_INTL5, PS2_KEY_INTL5 },
-                { PS2_KC_LANG1, PS2_KEY_LANG1 },
-                { PS2_KC_LANG2, PS2_KEY_LANG2 },
-                { PS2_KC_LANG3, PS2_KEY_LANG3 },
-                { PS2_KC_LANG4, PS2_KEY_LANG4 },
-                { PS2_KC_LANG5, PS2_KEY_LANG5 }
-                };
-
-/* Two byte Key  table after an E0 byte received */
-#if defined(PS2_REQUIRES_PROGMEM)
-const uint8_t PROGMEM extended_key[][ 2 ] = {
-#else
-const uint8_t extended_key[][ 2 ] = {
-#endif
-                { PS2_KC_IGNORE, PS2_KEY_IGNORE },
+                { PS2_KC_PAUSE, PS2_KEY_PAUSE },
                 { PS2_KC_PRTSCR, PS2_KEY_PRTSCR },
-                { PS2_KC_CTRL, PS2_KEY_R_CTRL },
-                { PS2_KC_ALT, PS2_KEY_R_ALT },
-                { PS2_KC_L_GUI, PS2_KEY_L_GUI },
-                { PS2_KC_R_GUI, PS2_KEY_R_GUI },
+                { PS2_KC_IGNORE, PS2_KEY_IGNORE },
                 { PS2_KC_MENU, PS2_KEY_MENU },
                 { PS2_KC_BREAK, PS2_KEY_BREAK },
                 { PS2_KC_HOME, PS2_KEY_HOME },
@@ -208,27 +175,14 @@ const uint8_t extended_key[][ 2 ] = {
                 { PS2_KC_DELETE, PS2_KEY_DELETE },
                 { PS2_KC_KP_ENTER, PS2_KEY_KP_ENTER },
                 { PS2_KC_KP_DIV, PS2_KEY_KP_DIV },
-                { PS2_KC_NEXT_TR, PS2_KEY_NEXT_TR },
-                { PS2_KC_PREV_TR, PS2_KEY_PREV_TR },
-                { PS2_KC_STOP, PS2_KEY_STOP },
-                { PS2_KC_PLAY, PS2_KEY_PLAY },
-                { PS2_KC_MUTE, PS2_KEY_MUTE },
-                { PS2_KC_VOL_UP, PS2_KEY_VOL_UP },
-                { PS2_KC_VOL_DN, PS2_KEY_VOL_DN },
-                { PS2_KC_MEDIA, PS2_KEY_MEDIA },
-                { PS2_KC_EMAIL, PS2_KEY_EMAIL },
-                { PS2_KC_CALC, PS2_KEY_CALC },
-                { PS2_KC_COMPUTER, PS2_KEY_COMPUTER },
-                { PS2_KC_WEB_SEARCH, PS2_KEY_WEB_SEARCH },
-                { PS2_KC_WEB_HOME, PS2_KEY_WEB_HOME },
-                { PS2_KC_WEB_BACK, PS2_KEY_WEB_BACK },
-                { PS2_KC_WEB_FORWARD, PS2_KEY_WEB_FORWARD },
-                { PS2_KC_WEB_STOP, PS2_KEY_WEB_STOP },
-                { PS2_KC_WEB_REFRESH, PS2_KEY_WEB_REFRESH },
-                { PS2_KC_WEB_FAVOR, PS2_KEY_WEB_FAVOR },
-                { PS2_KC_POWER, PS2_KEY_POWER },
-                { PS2_KC_SLEEP, PS2_KEY_SLEEP },
-                { PS2_KC_WAKE, PS2_KEY_WAKE }
+                };
+
+/* Two byte Key  table after an E0 byte received */
+#if defined(PS2_REQUIRES_PROGMEM)
+const uint8_t PROGMEM extended_key[][ 2 ] = {
+#else
+const uint8_t extended_key[][ 2 ] = {
+#endif
                 };
 
 /* Scroll lock numeric keypad re-mappings for NOT NUMLOCK */
